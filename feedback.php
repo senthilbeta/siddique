@@ -1,8 +1,8 @@
 <?php 
-// session_start();
-// if(empty($_SESSION['username'])):
-//     header('Location:new.php');
-// endif; 
+session_start();
+if(empty($_SESSION['username'])):
+    header('Location:new.php');
+endif; 
 
 ?>
 
@@ -122,11 +122,13 @@ input{
   <ul>
    
       <li><a href="home.php" >Home</a></li>
+      <li><a href="about.php">About us</a></li>
       <li><a href="course.php" >Course</a></li>
       <li><a href="contact.php">Contact</a></li>
-      <li><a href="about.php">About us</a></li>
       <li><a href="#"class="active">Feedback</a></li>
-      <li><a href="order.php">orders</a></li>
+      <li><a href="myaccount.php">MyAccount</a></li>
+    <li><a href="logoutprocess.php">Logout</a></li>
+
   </ul>
    </nav>
    <div class="head">

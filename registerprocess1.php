@@ -7,12 +7,12 @@ if(isset($_POST['btn1'])){
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
 
-$inlog = "INSERT INTO normal(name, gender, time, mobile, email) VALUES('$name','$gender', '$time', '$mobile', '$email')";
-$result = $connec->query($inlog);
+$inlog1 = "INSERT INTO advance(name, gender, time, mobile, email) VALUES('$name','$gender', '$time', '$mobile', '$email')";
+$result1 = $connec->query($inlog1);
 echo $result;
-if($result == TRUE)
+if($result1 == TRUE)
 {
-    header('Location:normreply.php');
+    header('Location:advreply.php');
 }
 else{
     echo "<script>alert('login failed.username and password are incorrect....')</script>";

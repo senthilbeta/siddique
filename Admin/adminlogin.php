@@ -119,7 +119,6 @@ button:hover {
     <input type="password" id="password" name="p1" required>
     
     <button type="submit" name="btn1">Login</button>
-  <p>Don't have an account? <a href="adminsignup.html">Sign Up</a></p>
 
   </form>
 

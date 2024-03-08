@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(empty($_SESSION['username'])):
+    header('Location:new.php');
+endif; 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +99,7 @@ font-weight: bold;
      <div class="ncourse">
 
     <div class="head" style="margin-top: -50px;position: absolute; margin-left: 50px; font-size: 30px; color: rgb(0, 0, 0);width: 400px;align-items: center; justify-content: center; text-align: center; background-color: #ffffff;">Normal Course</div>
-    <form  action="registerprocess.php">
+    <form  action="registerprocess.php" method= "POST">
     <label for="" class="jm">Name :</label>
     <input type="text"placeholder="Enter your name" name="name" style="margin-left: 23px;padding: 5px 3px;"  required><br>
       <label for="" class="jm">Gender:</label>

@@ -1,3 +1,18 @@
+<?php 
+// session_start();
+// if(empty($_SESSION['password'])):
+//     header('Location:adminlogin.php');
+// endif;
+?>
+<?php
+session_start();
+
+if (empty($_SESSION['password'])) {
+    session_destroy();
+    header('Location:adminlogin.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,23 +136,28 @@
 <label class="logo">DRIVING SCHOOL</label>
 <ul>
     
-    <li><a href="adminhome.html">Dashboard</a></li>
-    <li><a href="#" class="active">Users</a></li>
+    <li><a href="#" class="active">Dashboard</a></li>
+    <li><a href="adminusers.php">Users</a></li>
     <div class="dropdown">
     <li><button class="dropbtn">Bookings</button>
         <div class="dropdown-content">
-          <a href="adminnormalcourse.html">NormalCourses</a>
-          <a href="adminadvancecourses.html">Advancedcourses</a>
+          <a href="adminnormalcourse.php">NormalCourses</a>
+          <a href="adminadvancecourses.php">Advancedcourses</a>
         </div>
       </div></li>
       <div class="dropdown2">
       <li><button class="dropbtn2">Others</button>
         <div class="dropdown-content2">
-          <a href="contactad.html">Contact</a>
-          <a href="feedbackad.html">Feedback</a>
+          <a href="contactad.php">Contact</a>
+          <a href="feedbackad.php">Feedback</a>
         </div>
       </div></li>
+    <li><a href="adminlogoutproces.php">Logout</a></li>  
+
 </ul>
 </nav>
+<?php 
+// echo $_SESSION['password'];
+?>
 </body>
 </html>

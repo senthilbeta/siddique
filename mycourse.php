@@ -5,94 +5,57 @@ if(empty($_SESSION['username'])):
 endif; 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="pr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <style>
-        body{
-            background-color: black;
-           
-            background-image: url(homeb.avif);
-            background-size:cover;
-            background-repeat: no-repeat;
+
+    <title>Document</title>
+ <style>   *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    nav{
+        background:#262020;
+        height: 80px;
+        width: 100%;
         }
-        .welcome{
-            color: #F6FDC3;
-            background-color:black;
-            margin-top: 50px;
-            margin-left: 60px;
-            font-family: "Brush Script MT",cursive;
+        label.logo{
+            color: white;
             font-size: 35px;
-            width:860px;
-            opacity: 0.5;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
         }
-        .btn{
-            /* height: 0px; */
-            /* width: 200px; */
-            padding:8px;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif,cursive;
-            background-color: black;
-            border-radius: 10px;
-            font-size: 27px;
-            border: none;
-            color: rgb(245, 245, 245);
-            margin-left: 800px;
-            margin-top:200px;
-            position: absolute;
-            /* margin-top: -70px; */
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-            
+        nav ul{
+            float: right;
+            margin-right: 20px;
         }
-        .btn1{
-            height: 60px;
-            width: 200px;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif,cursive;
-            background-color: rgb(161, 69, 69);
-            border-radius: 20px;
-            font-size: 30px;
-            border: none;
-            color: rgb(245, 245, 245);
-            margin-left: 130px;
-            margin-top: 30px;
-            
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 6px;
         }
-        .btn:hover{
-            color: rgb(255, 255, 255);
-            background-color: red;
-            transform: scale(1.1);
-            transition: 0.3s;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        nav ul li a{
+            color: white;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
         }
-        .btn1:hover{
-            color: rgb(255, 255, 255);
-            background-color: rgb(0, 0, 0);
-            transform: scale(1.2);
-            transition: 0.5s;
-        }
-        .lgbtn{
-          height: 40px;
-          width:90px;
-          border-radius: 5px;
-          border: none; 
-          background-color: rgb(255, 255, 255);
-          font-family:cursive;
-          font-size: medium;
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          
-        }
-        body{ font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: large;}
-        .marq{
-            background-color: grey;
-            opacity: 0.5;
-        }
+        a.active,a:hover{
+        background: #FF8080;
+        color: white;
+        transition: .5s;
+    }
         .active1{
         background: #CDFADB;
         color: black;
@@ -160,14 +123,7 @@ endif;
    color:#262020;
    background-color: #fff9f9;}
 
-   .icon{
-              width: 100%;
-              height: 100px;
-              margin-top: 42px;
-              background-color: black;
-              position: absolute;
-            }
-            .footer{
+   .footer{
 background-color:black;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 width:100%;
@@ -236,41 +192,27 @@ grid-template-columns:1fr 1fr 1fr;
     </style>
 </head>
 <body>
-
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-<label class="logo">DRIVING SCHOOL</label>
-<ul>
-    
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="about.php">About us</a></li>
-    <li><a href="course.php">Courses</a></li>
-    <li><a href="contact.php">Contact</a></li>
-    <!-- <li><a href="feedback.php">Feedback</a></li> -->
-    <div class="dropdown">
+        
+        <label class="logo">DRIVING SCHOOL</label>
+        <ul>
+         
+            <li><a href="home.php" >Home</a></li>
+            <li><a href="about.php">About us</a></li>
+            <li><a href="course.php" >Course</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <!-- <li><a href="feedback.php">Feedback</a></li> -->
+            <div class="dropdown">
     <li><button class="dropbtn">MY Account</button>
         <div class="dropdown-content">
           <a href="mycourse.php">Courses</a>
           <a href="mypayment.php">Payments</a>
         </div>
       </div>
-    <li><a href="logoutprocess.php"class="active1">Logout</a></li>
-</ul>
-
-    </nav>
-  <!-- <form action="cars.php">  <button class="btn1">Our Cars</button></form> -->
-
-    <!-- <div class="marq"><MARquee>10% Offer for 6months</MARquee></div> -->
-<div class="welcome">
-    <!-- <h1>Senthil Driving School</h1> -->
-  
-</div>
-
-<a href="course.php" class="btn" >Register now!</a>
-<div class="footer">
+            <li><a href="logoutprocess.php" class="active1">Logout</a></li>
+        </ul>
+         </nav>
+         <div class="footer">
 <div class="f1">
 <i class="copy">&#169;</i><p>2024 Siddique Driving School Pvt ltd</p>
 </div>
