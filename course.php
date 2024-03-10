@@ -79,7 +79,7 @@ input{
     
 }
 .class{
-    box-shadow: 0px 4px 8px black;
+    /* box-shadow: 0px 4px 8px black; */
     display: grid;
     grid-template-columns: 1fr 1fr ;
     height: 510px;
@@ -88,8 +88,9 @@ input{
 .class1{
     margin-top: 70px;
     background-color:  rgba(255, 255, 255, 0.432);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     margin-left: 200px;
-    box-shadow: 0px 4px 8px #7E6363;
+    /* box-shadow: 0px 4px 8px #7E6363; */
     display: grid;
     grid-template-columns: 1fr 1fr ;
     height: 400px;
@@ -100,19 +101,22 @@ input{
 .class2{
     margin-top: 70px;
     background-color: rgba(255, 255, 255, 0.452);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     margin-left: 150px;
-    box-shadow: 0px 4px 8px #7E6363;
+    /* box-shadow: 0px 4px 8px #7E6363; */
     height: 400px;
     width: 400px;
     border: 3px solid black;
 }
 .heading
 {
-    background-color: #00000085;
-    color: white;
+    /* background-color: #F6FDC3; */
+    color: black;
     width: 200px;
     text-align: center;
     text-transform: uppercase;
+    font-weight:bold;
+
     font-size: 20px;
     position: absolute;
     margin-left: 120px;
@@ -123,8 +127,9 @@ input{
 }
 .heading2
 {
-    background-color: #00000085;
-    color: white;
+    /* background-color: #00000085; */
+    color: black;
+    font-weight:bold;
 border-color: blue;
     width: 230px;
     text-align: center;
@@ -142,24 +147,31 @@ border-color: blue;
     margin-top: 50px;
     margin-left: 55px;
     
-    
 }
+.img img{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+} 
 .book button{
     position: absolute;
-    margin-top:-49px;
+    margin-top:-43px;
     border-radius: 5px;
-    margin-left: 230px;
-    height: 50px;
-    width: 100px;
-    border: 2px solid rgb(0, 0, 0);
+    margin-left: 200px;
+    /* height: 50px; */
+    padding:10px;
+    /* width: 200px; */
+    /* border: 2px solid rgb(0, 0, 0); */
     font-family: monospace;
-    background-color: #2620209d;
+    border:none;
+    cursor:pointer;
+    background-color: #FF8080;
     color: white;
     font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .book button:hover{
-    color: rgb(10, 255, 43);
-    background-color:#262020;
+    color: #CDFAD5;
+    background-color:black;
     transform:scale(1.1);
     transition: 0.1s;
 }
@@ -169,54 +181,80 @@ border-color: blue;
     margin-top: 50px;
     margin-left: 55px;
 }
+.img2 img{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+} 
 .book2 button{
-    height: 50px;
-    width: 100px;
-    border: 2px solid rgb(0, 0, 0);
+    /* height: 50px; */
+    /* width: 100px; */
+    /* border: 2px solid rgb(0, 0, 0); */
+    padding:10px;
+    cursor:pointer;
+
     font-family: monospace;
     border-radius: 5px;
-    background-color:#2620209d;
+    background-color: #FF8080;
     color: white;
     font-size: 16px;
     position: absolute;
-    margin-top: -43px;
-    margin-left: 230px;
+    margin-top: -40px;
+    border:none;
+    margin-left: 200px;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
 }
 .book2 button:hover{
-    color: rgb(10, 255, 43);
-    background-color:#262020;
+    color: #CDFAD5;
+    background-color:black;
     transform:scale(1.1);
     transition: 0.1s;
 }
 .inf1 button{
-    margin-top: 350px;
-    margin-left: -250px;
-    height: 30px;
-    width: 100px;
-    border: 2px solid rgb(0, 0, 0);
+    margin-top: 345px;
+    margin-left: -300px;
+    /* height: 30px; */
+    /* width: 100px; */
+    padding:10px;
+    /* border: 2px solid rgb(0, 0, 0); */
+    border:none;
     font-family: monospace;
-    background-color: #2620209d;
+    background-color: #FFCF96;
     color: white;
     font-size: 16px;
+    cursor:pointer;
+
     border-radius: 5px;
 }
 .inf1 button:hover{
-    color: rgb(10, 255, 43);
+    color: #CDFAD5;
     background-color:#262020;
     transform:scale(1.1);
     transition: 0.1s;
 }
 .inf2 button{
-    height: 30px;
-    width: 100px;
-    border: 2px solid rgb(0, 0, 0);
+    /* height: 30px; */
+    /* width: 100px; */
+    padding:10px;
+    cursor:pointer;
+
+    /* /* border: 2px solid rgb(0, 0, 0); */
+    border:none; 
     font-family: monospace;
-    background-color: #2620209d;
+    background-color: #FFCF96;
     color: white;
     font-size: 16px;
     border-radius: 5px;
-    margin-top:350px;
-    margin-left: 100px;
+    margin-top:340px;
+    margin-left: 56px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.inf2 button:hover{
+    color: #CDFAD5;
+    background-color:#262020;
+    transform:scale(1.1);
+    transition: 0.1s;
 }
 a.active,a:hover{
         background: #FF8080;
@@ -391,7 +429,7 @@ grid-template-columns:1fr 1fr 1fr;
             <img src="normal.jpg" alt="" height="280px" width="300px">
         </div>
         <form action="normdes.php">     <div class="inf1">
-            <button id="info1">Info!</button>
+            <button id="info1">View Course!</button>
         </div></Form>
         <form action="register.php">    <div class="book">
             <button id="rgn1">Register now!</button>
@@ -408,7 +446,7 @@ grid-template-columns:1fr 1fr 1fr;
                 <img src="ad1.avif" alt="" height="275px" width="300px">
             </div>
             <form action="advdes.php">     <div class="inf2">
-            <button id="info2">Info!</button>
+            <button id="info2">View Course!</button>
         </div></Form>
         <form action="registeradv.php">   <div class="book2">
                 <button>Register now!</button>

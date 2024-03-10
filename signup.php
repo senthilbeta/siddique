@@ -1,3 +1,43 @@
+<?php
+include 'dbconnection.php';
+if(isset($_POST['btn1'])){
+  $name = $_POST['n1'];
+  $pass = $_POST['p1'];
+  $inlog = "select * from user where username='$name'";
+  $res = mysqli_query($connec, $inlog);
+  $row = mysqli_fetch_array($res);
+  $count = mysqli_num_rows($res);
+
+  if($count == 0)
+  {
+    $name = $_POST['n1'];
+    $pass = $_POST['p1'];
+    
+    $inlog = "INSERT INTO user(username, password) VALUES('$name','$pass')";
+    $result = $connec->query($inlog);
+    if($result == TRUE)
+    {
+        header('Location:home.php');
+    }
+    else{
+        echo "<script>alert('login failed.recort insert error....')</script>";
+        echo "error";
+    }
+
+  }
+  else{
+    echo "<script>alert('Signup failed.User Name Are Already Exites....')</script>";
+     
+
+  }
+  }
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +104,7 @@ button:hover {
     </style>
 </head>
 <body>
-  <form action="userlogin.php" method="POST">
+  <form method="POST">
   <h2>Signup here!</h2>
 
     <label for="username">Username:</label>

@@ -88,8 +88,8 @@ if (isset($_POST['btn1'])) {
     echo $count1;
 
     if ($count1 > 0) {
-        $_SESSION['username'] = $row1['username'];
-        $_SESSION['password'] = $row1['password'];
+        $_SESSION['admin_username'] = $row1['username'];
+        $_SESSION['admin_password'] = $row1['password'];
         header('Location: adminhome.php');
         exit; // Add exit to prevent further script execution
     } else {

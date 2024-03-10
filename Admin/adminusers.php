@@ -7,7 +7,7 @@
 <?php
 session_start();
 
-if (empty($_SESSION['password'])) {
+if (empty($_SESSION['admin_password'])) {
     session_destroy();
     header('Location:adminlogin.php');
     exit; 
@@ -308,5 +308,14 @@ if (empty($_SESSION['password'])) {
 			// ?>
 
                         </table>
+                        <?php 
+
+if($num == 0){
+
+    echo "<h2 style='text-align:center;margin-top:50px; margin-left:500px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;color:#CDFAD5; background-color:black;width:400px;'>No Data Found</h2>";
+    
+
+}
+?>
 </body>
 </html>

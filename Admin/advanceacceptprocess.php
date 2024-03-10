@@ -7,7 +7,7 @@
 <?php
 session_start();
 
-if (empty($_SESSION['password'])) {
+if (empty($_SESSION['admin_password'])) {
     session_destroy();
     header('Location:adminlogin.php');
     exit; 
@@ -24,8 +24,9 @@ if(isset($_POST['d1'])){
     $mobile = $_GET['mobile'];
     $email = $_GET['email'];
     $type = "Advance";
+    $date = date("Y-m-d");
 
-$inlog = "INSERT INTO normalbooking(name, gender, time, mobile, email, type) VALUES('$name','$gender', '$time', '$mobile', '$email', '$type')";
+$inlog = "INSERT INTO normalbooking(name, gender, time, mobile, email, type, date) VALUES('$name','$gender', '$time', '$mobile', '$email', '$type', '$date')";
 $result = $connec->query($inlog);
 
 if($result == TRUE)

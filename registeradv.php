@@ -5,6 +5,8 @@ if(empty($_SESSION['username'])):
 endif; 
 
 ?>
+     <?php   $name = $_SESSION['username'];  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +45,10 @@ endif;
             border: none;
 
 border-radius: 20px;
-box-shadow: 0px 2px 2px 5px rgb(118, 162, 165);
+/* box-shadow: 0px 2px 2px 5px rgb(118, 162, 165);
+ */
+box-shadow: rgba(255, 255, 255, 0.8) 0px 1px 10px 0px, rgba(255, 255, 255, 0.8) 6px 2px 10px 0px;
+
 align-items: center;
 margin-left: 33%;
 margin-top: 6%;
@@ -65,7 +70,8 @@ label{
     text-transform: uppercase;
 }
 input{
-    font-family: cursive;
+    /* font-family: cursive; */
+    font-weight:bold;
     color: rgb(0, 0, 0);
     
 }
@@ -85,11 +91,26 @@ font-weight: bold;
     background-color: rgba(181, 181, 194, 0.521);
       
 }
+
+.rback{
+    text-decoration:none;
+    color:black;
+    background-color:#FFCF96;
+    position:absolute;
+    margin-left:200px;
+    margin-top:6px;
+    padding:8px 35px;;
+    /* height: 35px;  */
+     border-radius: 8px;
+     font-family: monospace;
+     
+}
         </style>
 </head>
 <body>
-    <div class="back"><form action="course.php">
-        <button style="color: rgb(0, 0, 0);" >Back</button></form></div>
+    <div class="back">
+        <!-- <form action="course.php"> -->
+        <!-- <button style="color: rgb(0, 0, 0);" >Back</button></form></div> -->
     <!-- <nav>
         
   <label class="logo">DRIVING SCHOOL</label>
@@ -116,15 +137,15 @@ font-weight: bold;
     <div class="head" style="margin-top: -50px;position: absolute; margin-left: 50px; font-size: 30px; color: rgb(0, 0, 0);width: 400px;align-items: center; justify-content: center; text-align: center; background-color: #ffffff;">Advance Course</div>
     <form action="registerprocess1.php" method="POST">
     <label for="" class="jm">Name :</label>
-    <input type="text" name="name" placeholder="Enter your name" required style="margin-left: 23px;padding: 5px 3px;"><br>
+    <input type="text" name="name" placeholder="Enter your name" value="<?php echo "$name" ?>" required style="margin-left: 23px;padding: 8px 70px;"><br>
     <label for="" class="jm">Gender:</label>
-       <select name="gender" id=""style="margin-left: 14px; padding: 6px 40px;">
+       <select name="gender" id=""style="margin-left: 14px; padding: 8px 125px;">
        <option value="male" >Male</option>
        <option value="female">Female</option>
        </select><br>
    
     <label for="" class="jm" >Timing:</label>
-    <select name="time" id="" aria-placeholder="Select" required style="margin-left: 5%; padding: 6px 40px;">
+    <select name="time" id="" aria-placeholder="Select" required style="margin-left: 5%; padding: 8px 100px;">
        <option value="7:00am-9:00am">7:00am-9:00am</option>
        <option value="2:00pm-4:00pm">2:00pm-4:00pm</option>
        <option value="5:00pm-7:00pm">5:00pm-7:00pm</option>
@@ -132,13 +153,15 @@ font-weight: bold;
     </select> <br>
     <br>
     <label for="">Mobile:</label> 
-    <input type="number" name="mobile" placeholder="Enter mobile number" required style="margin-left: 10px;padding: 5px 1px;"><br><br> <br>
+    <input type="text" name="mobile" placeholder="Enter mobile number" required style="margin-left: 10px;padding: 8px 70px;"><br><br> <br>
     <!-- <label for="">Class:</label><select name="" id="" required style="margin-left: 6%; padding: 7px 53px;"><option value="">Single class</option><br><option value="">Group class</option></select><br><br><br> -->
     <label for="">Email:</label>
-    <input type="email" name="email" placeholder="Enter your email" required style="margin-left: 25px;padding: 5px 5px;"><br><br>
-    <input type="submit" name="btn1" value="Register" style="margin-left: 20%; margin-top: 2%;font-size: medium; font-family: monospace; height: 35px; width: 20%; border-radius: 8px; font-size: 14px; font-family: cursive;font-weight: bold;border: none;">
-    <input type="reset"  style="margin-left: 50%; margin-top: -35px; font-size: medium; font-family: monospace; height: 35px; width: 20%; border-radius: 8px; font-size: 14px; font-family: cursive;font-weight: bold;border: none; position: absolute;">     
+    <input type="email" name="email" placeholder="Enter your email" required style="margin-left: 25px;padding: 8px 70px;"><br><br>
+    <input type="submit" name="btn1" value="Register" style="margin-left: 1%; background-color:#CDFAD5; margin-top: 2%;font-size: medium; font-family: monospace; height: 35px; width: 40%; border-radius: 8px; font-size: 14px; font-family: cursive;font-weight: bold;border: none;">
+    <input type="reset"  style="margin-left: 10%; margin-top: 5px; font-size: medium; font-family: monospace; height: 35px; width: 20%; border-radius: 8px; font-size: 14px; font-family: cursive;font-weight: bold;border: none; position: absolute;">     
+    <a href="course.php" class="rback">Back</a>    
 </form>
+
  </div>
 
      </div>

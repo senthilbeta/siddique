@@ -7,7 +7,7 @@
 <?php
 session_start();
 
-if (empty($_SESSION['password'])) {
+if (empty($_SESSION['admin_password'])) {
     session_destroy();
     header('Location:adminlogin.php');
     exit;

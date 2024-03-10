@@ -5,6 +5,13 @@ if(empty($_SESSION['username'])):
 endif; 
 
 ?>
+<?php
+include 'dbconnection.php';
+    $sql = "SELECT * FROM normalbooking WHERE name = '{$_SESSION['username']}'";
+    $query = mysqli_query($connec, $sql);
+    $num = mysqli_num_rows($query);
+          
+           ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +28,9 @@ endif;
         box-sizing: border-box;
     }
     body{
+        background-image:url('f.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     nav{
@@ -129,7 +139,7 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
 width:100%;
 height:90px;
 position: relative;
-margin-top:500px;
+margin-top:200px;
 display:grid;
 grid-template-columns:1fr 1fr 1fr;
 
@@ -189,9 +199,21 @@ grid-template-columns:1fr 1fr 1fr;
                 color:#FF8080;
                 background-color:black;
             }
+            .mycourses{
+                width:100%;
+                background-color:#FF8080;
+            }
+            .mycourses h2{
+             /* text-align:center; */
+                color:white;
+                 margin-left:100px;
+            }
     </style>
 </head>
+
 <body>
+
+
     <nav>
         
         <label class="logo">DRIVING SCHOOL</label>
@@ -212,6 +234,70 @@ grid-template-columns:1fr 1fr 1fr;
             <li><a href="logoutprocess.php" class="active1">Logout</a></li>
         </ul>
          </nav>
+         <div class="mycourses">
+            <h2>Your Courses</h2>
+           
+        </div>
+        
+           <?php
+             if ($num > 0) {
+                while ($result = mysqli_fetch_assoc($query)) {
+                    $name = $result['name'];
+                    $gender = $result['gender'];
+                    $time = $result['time'];
+                    $email = $result['email'];
+                    $mobile = $result['mobile'];
+                    $type = $result['type'];
+                    if($type == 'Normal'){
+                        echo "<div style='width:500px; margin:20px 60px; height:300px;background-color:black; color:#CDFAD5;box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;'>";
+                        //     echo "<h1 style='color:red;'>$name</h1>";
+                        echo "<h1 style='text-align:center;'>Normal Course</h1>";
+
+                                echo "<br>";
+                                echo "<h4 style='margin-left:50px;'>Name: $name<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Course Type: $type<br><br></h4>";
+            
+                                echo "<h4 style='margin-left:50px;'>Gender: $gender<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Time: $time<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Email: $email<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Mobile: $mobile<br><br></h4>";
+                        echo "</div>";
+            
+               
+                            }
+                            if($type == 'Advance'){
+                                echo "<div style='width:500px; margin:20px 60px; height:300px; background-color:black; color:#CDFAD5;float:right; position:absolute; margin-top:-320px; margin-left:700px;box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;'>";
+                                //     echo "<h1 style='color:red;'>$name</h1>";
+                                        echo "<h1 style='text-align:center;'>Advance Course</h1>";
+                                        echo "<br>";
+                                echo "<h4 style='margin-left:50px;'>Name: $name<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Course Type: $type<br><br></h4>";
+            
+                                echo "<h4 style='margin-left:50px;'>Gender: $gender<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Time: $time<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Email: $email<br><br></h4>";
+                                echo "<h4 style='margin-left:50px;'>Mobile: $mobile<br><br></h4>";
+                                echo "</div>";
+                    
+                       
+                                    }
+                        } 
+                    }else {
+                            echo "<h2 style='text-align:center;margin-top:50px; margin-left:500px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;color:#CDFAD5; background-color:black;width:400px;'>No Courses found</h2>";
+                        }
+         
+            
+        // echo "<div style='display:grid;grid-template-columns:1fr 1fr;'>";
+            
+            // echo "<div style='width:500px; margin:20px 60px; height:400px; background-color:black;'>";
+
+
+            // echo "</div>";
+        // echo "</div>";
+
+            ?>
+
+
          <div class="footer">
 <div class="f1">
 <i class="copy">&#169;</i><p>2024 Siddique Driving School Pvt ltd</p>
@@ -231,5 +317,7 @@ grid-template-columns:1fr 1fr 1fr;
 <a href="#"><i class="fa fa-twitter" style="font-size:30px;color:white;margin-left:30px;"></i></a>
 </div>
 </div>
+
 </body>
 </html>
+

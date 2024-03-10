@@ -44,7 +44,7 @@ endif;
             border: none;
             color: rgb(245, 245, 245);
             margin-left: 800px;
-            margin-top:200px;
+            margin-top:150px;
             position: absolute;
             /* margin-top: -70px; */
             box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
@@ -104,6 +104,10 @@ endif;
         background: red;
         color: white;
         transition: .5s;
+    }
+    nav{
+        background-color:black;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
     }
     .dropbtn {
  
@@ -243,6 +247,7 @@ grid-template-columns:1fr 1fr 1fr;
         <i class="fas fa-bars"></i>
       </label>
 <label class="logo">DRIVING SCHOOL</label>
+
 <ul>
     
     <li><a href="#" class="active">Home</a></li>
@@ -261,6 +266,11 @@ grid-template-columns:1fr 1fr 1fr;
 </ul>
 
     </nav>
+   
+        <?php
+        
+        echo "<h2 style='color:#CDFAD5; background-color:black; width:300px;  margin-left:150px; margin-top:20px; background-color: rgba(0, 0, 0, 0.623); box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>Welcome ".$_SESSION['username']."</h2>";
+        ?>
   <!-- <form action="cars.php">  <button class="btn1">Our Cars</button></form> -->
 
     <!-- <div class="marq"><MARquee>10% Offer for 6months</MARquee></div> -->
@@ -289,5 +299,19 @@ grid-template-columns:1fr 1fr 1fr;
 <a href="#"><i class="fa fa-twitter" style="font-size:30px;color:white;margin-left:30px;"></i></a>
 </div>
 </div>
+<?php 
+    $sql = "SELECT * FROM user WHERE name = '{$_SESSION['username']}'";
+			 $query = mysqli_query($connec,$sql);
+			 $num = mysqli_num_rows($query);
+			 if($num>0){
+				while($result=mysqli_fetch_assoc($query)){
+				    $name = $result['name'];
+            $gender =$result['gender'];
+            $time = $result['time'];
+            $email = $result['email'];
+            $mobile = $result['mobile']; 
+				     }
+				   }
+        ?>
 </body>
 </html>

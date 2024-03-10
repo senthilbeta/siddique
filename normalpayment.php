@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(empty($_SESSION['username'])):
+    header('Location:new.php');
+endif; 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

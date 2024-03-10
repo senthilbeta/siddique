@@ -5,6 +5,28 @@ if(empty($_SESSION['username'])):
 endif; 
 
 ?>
+<?php
+include 'dbconnection.php';
+if(isset($_POST['btn1']))
+  {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    $inlog = "INSERT INTO contact(name, email, message) VALUES('$name','$email','$message')";
+    $result = $connec->query($inlog);
+    if($result == TRUE)
+    {
+      echo "<script>alert('Message sent successfully.....')</script>";
+        
+    }
+    else{
+        echo "<script>alert('login failed.recort insert error....')</script>";
+        // echo "error";
+    }
+
+  }
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -277,7 +299,7 @@ grid-template-columns:1fr 1fr 1fr;
   </ul>
   
       </nav>
-  
+      <?php   $name = $_SESSION['username'];  ?>
   <div class="file">
 
    <div class="file1">
@@ -287,11 +309,13 @@ grid-template-columns:1fr 1fr 1fr;
    <div class="file2">
     <H1>CONTACT US</H1>
 <div class="file2_1">
-  
-  <input type="text" class="fn" placeholder="Full name"> <br><br>
-  <input type="email" class="em" placeholder="E-mail"> <br><br>
-  <input type="textarea" class="ms" placeholder="Message"><br>
-  <button>ok</button>
+  <form method="POST" action="contact.php">
+  <input type="text" class="fn" name="name" value="<?php  echo "$name" ?>" placeholder="Full name"> <br><br>
+  <input type="email" class="em" name="email"  placeholder="E-mail"> <br><br>
+  <input type="textarea" class="ms" name="message" placeholder="Message"><br>
+  <input type="submit" value="submit" name="btn1">
+
+  </form>
   <!-- <button type="reset" style="position: absolute; margin-top: -220px; border-radius: 20px 10px;">X</button> -->
 
 </div>
